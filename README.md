@@ -1,0 +1,7 @@
+# Termio launch videos
+
+Each folder is one video: its source composition, assets and final renders.
+
+| Folder | Video |
+|---|---|
+| [`20261018-ui-2`](20261018-ui-2) | Termio UI 2.0: each agent session is a card |

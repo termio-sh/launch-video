@@ -1,0 +1,11 @@
+{
+  "name": "termio-launch-20261018-ui-2",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "npx --yes hyperframes@0.8.169 preview",
+    "check": "npx --yes hyperframes@0.8.169 check",
+    "render": "npx --yes hyperframes@0.8.169 render",
+    "publish": "npx --yes hyperframes@0.8.169 publish"
+  }
+}
