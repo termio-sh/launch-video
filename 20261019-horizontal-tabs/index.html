@@ -1,0 +1,800 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1920, height=1080" />
+    <title>termio — horizontal tabs</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "SF Pro Display";
+        src: url("assets/fonts/SF-Pro-Display-Semibold.otf") format("opentype");
+        font-weight: 600;
+      }
+      @font-face {
+        font-family: "SF Pro Display";
+        src: url("assets/fonts/SF-Pro-Display-Medium.otf") format("opentype");
+        font-weight: 500;
+      }
+      @font-face {
+        font-family: "SF Pro Display";
+        src: url("assets/fonts/SF-Pro-Display-Regular.otf") format("opentype");
+        font-weight: 400;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        overflow: hidden;
+        background: #000;
+        color: #f4f4f5;
+        font-family: "SF Pro Display", sans-serif;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      /* The landing hero's aurora, as in the UI 2.0 film. */
+      #backdrop {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        background: #070710;
+      }
+      .aurora {
+        position: absolute;
+        border-radius: 50%;
+      }
+      #au-navy {
+        left: -400px;
+        top: -500px;
+        width: 2700px;
+        height: 1300px;
+        background: radial-gradient(closest-side, rgba(16, 42, 94, 0.95), rgba(16, 42, 94, 0));
+      }
+      #au-band {
+        left: -300px;
+        top: 160px;
+        width: 2500px;
+        height: 620px;
+        background: radial-gradient(closest-side, rgba(31, 99, 176, 0.9), rgba(31, 99, 176, 0.35) 55%, rgba(31, 99, 176, 0));
+        transform: rotate(24deg);
+      }
+      #au-teal {
+        left: -360px;
+        top: -360px;
+        width: 1200px;
+        height: 820px;
+        background: radial-gradient(closest-side, rgba(47, 138, 160, 0.55), rgba(47, 138, 160, 0));
+      }
+      #au-violet {
+        left: 1180px;
+        top: -260px;
+        width: 1300px;
+        height: 900px;
+        background: radial-gradient(closest-side, rgba(25, 22, 54, 0.95), rgba(25, 22, 54, 0));
+      }
+      #au-shade {
+        left: -420px;
+        top: 520px;
+        width: 1500px;
+        height: 1000px;
+        background: radial-gradient(closest-side, rgba(7, 7, 16, 0.95), rgba(7, 7, 16, 0));
+      }
+      #au-floor {
+        left: 0;
+        right: 0;
+        bottom: 0;
+        height: 420px;
+        border-radius: 0;
+        background: linear-gradient(180deg, rgba(8, 8, 10, 0), rgba(8, 8, 10, 0.85));
+      }
+      #au-grain {
+        position: absolute;
+        inset: 0;
+        background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.82' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+        background-size: 160px 160px;
+        opacity: 0.16;
+        mix-blend-mode: overlay;
+      }
+      .scene {
+        position: absolute;
+        inset: 0;
+      }
+
+      /* Depth of field, as a tilt-shift lens: the window is drawn three times, sharp, a
+         little soft and soft, and the two sharper copies are masked to a band that lies along
+         the strip. The band turns with the window, so a pan along the strip keeps every row
+         at the same focus instead of sweeping text through the edge of the sharp zone. */
+      .lens {
+        position: absolute;
+        inset: 0;
+      }
+      /* The blur works inside the window and is clipped by its corners, so all three copies
+         share one crisp edge and none of them bleeds a soft halo onto the backdrop. The radius
+         is set per frame in window pixels, divided by the camera's scale. */
+      .content {
+        position: absolute;
+        inset: 0;
+      }
+      #lens-mid .win,
+      #lens-sharp .win {
+        box-shadow: none;
+      }
+      .tilt,
+      .untilt {
+        position: absolute;
+        left: -600px;
+        top: -600px;
+        width: 3120px;
+        height: 2280px;
+      }
+      .untilt {
+        left: 0;
+        top: 0;
+      }
+      #lens-mid .tilt {
+        -webkit-mask-image: linear-gradient(180deg, transparent calc(1070px - var(--h1) * 2.6), #000 calc(1070px - var(--h1) * 1.1), #000 calc(1070px + var(--h1) * 1.1), transparent calc(1070px + var(--h1) * 2.6));
+        mask-image: linear-gradient(180deg, transparent calc(1070px - var(--h1) * 2.6), #000 calc(1070px - var(--h1) * 1.1), #000 calc(1070px + var(--h1) * 1.1), transparent calc(1070px + var(--h1) * 2.6));
+      }
+      #lens-sharp .tilt {
+        -webkit-mask-image: linear-gradient(180deg, transparent calc(1070px - var(--h1) * 1.6), #000 calc(1070px - var(--h1)), #000 calc(1070px + var(--h1)), transparent calc(1070px + var(--h1) * 1.6));
+        mask-image: linear-gradient(180deg, transparent calc(1070px - var(--h1) * 1.6), #000 calc(1070px - var(--h1)), #000 calc(1070px + var(--h1)), transparent calc(1070px + var(--h1) * 1.6));
+      }
+      .cam {
+        position: absolute;
+        left: 0;
+        top: 0;
+        transform-origin: 0 0;
+      }
+      /* One window in capture pixels: 1654x1122 is 827x561pt at 2x. */
+      .win {
+        position: relative;
+        width: 1654px;
+        height: 1122px;
+        border-radius: 30px;
+        overflow: hidden;
+        background: rgb(46, 49, 56);
+        box-shadow:
+          0 60px 160px rgba(0, 0, 0, 0.75),
+          0 0 0 2px rgba(255, 255, 255, 0.08);
+      }
+      /* Light on the window: a soft backlight behind it and a rim lit from the top leading
+         corner. One element each, breathing slowly; nothing in them moves fast. */
+      .halo {
+        position: absolute;
+        left: -140px;
+        top: -140px;
+        width: 1934px;
+        height: 1402px;
+        border-radius: 200px;
+        background: radial-gradient(closest-side, rgba(130, 180, 255, 0.9), rgba(110, 165, 255, 0.45) 72%, rgba(110, 165, 255, 0));
+        filter: blur(70px);
+        opacity: 0.45;
+      }
+      .rim {
+        position: absolute;
+        inset: 0;
+        border-radius: 30px;
+        padding: 2px;
+        background: linear-gradient(140deg, rgba(200, 225, 255, 0.95) 0%, rgba(160, 200, 255, 0.35) 30%, rgba(255, 255, 255, 0.06) 60%, rgba(160, 200, 255, 0.3) 100%);
+        -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        opacity: 0.4;
+        pointer-events: none;
+      }
+      .shot {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1654px;
+        height: 1122px;
+        opacity: 0;
+      }
+      .shot.on {
+        opacity: 1;
+      }
+      /* The window's top row, rebuilt from SessionTabStrip.swift so it can move. */
+      .head {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1654px;
+        height: 88px;
+        background: rgb(46, 49, 56);
+      }
+      .light {
+        position: absolute;
+        top: 32px;
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.18);
+      }
+      .tb {
+        position: absolute;
+        top: 14px;
+        height: 60px;
+      }
+      .track {
+        position: absolute;
+        left: 340px;
+        top: 18px;
+        width: 1226px;
+        height: 52px;
+        border-radius: 26px;
+        background: rgba(255, 255, 255, 0.035);
+      }
+      .tab {
+        position: absolute;
+        left: 340px;
+        top: 18px;
+        width: 304px;
+        height: 52px;
+      }
+      .tab .face,
+      .tab .glass {
+        position: absolute;
+        inset: 0;
+        border-radius: 26px;
+      }
+      .tab .face {
+        background: rgba(255, 255, 255, 0.06);
+        opacity: 0;
+      }
+      /* The selected pill: a face a step lighter, a hairline, a rim lit from the top leading corner. */
+      .tab .glass {
+        background: rgba(255, 255, 255, 0.09);
+        box-shadow:
+          inset 0 0 0 1px rgba(255, 255, 255, 0.1),
+          inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.22);
+        opacity: 0;
+      }
+      .tile {
+        position: absolute;
+        left: 12px;
+        top: 6px;
+        width: 40px;
+        height: 40px;
+        border-radius: 12px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.04)), rgb(46, 49, 56);
+        box-shadow:
+          inset 1.5px 1.5px 0 rgba(255, 255, 255, 0.45),
+          inset -1px -1px 0 rgba(255, 255, 255, 0.12),
+          0 0 0 1px rgba(0, 0, 0, 0.45),
+          0 2px 0 rgba(0, 0, 0, 0.35);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .tile img {
+        width: 22px;
+        height: 22px;
+      }
+      .tab .title {
+        position: absolute;
+        left: 68px;
+        top: 0;
+        right: 50px;
+        height: 52px;
+        line-height: 52px;
+        font-size: 26px;
+        font-weight: 400;
+        color: rgba(235, 235, 245, 0.55);
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .tab .title.on {
+        font-weight: 500;
+        color: #f5f5f7;
+      }
+      .tab .close {
+        position: absolute;
+        right: 12px;
+        top: 8px;
+        width: 36px;
+        height: 36px;
+        opacity: 0;
+      }
+      .tab .close::before,
+      .tab .close::after {
+        content: "";
+        position: absolute;
+        left: 8px;
+        top: 17px;
+        width: 20px;
+        height: 2px;
+        border-radius: 1px;
+        background: rgba(235, 235, 245, 0.6);
+        transform: rotate(45deg);
+      }
+      .tab .close::after {
+        transform: rotate(-45deg);
+      }
+      /* WorkingIndicator: a 3x3 grid whose ring carries a comet once every 1.1s. */
+      .comet {
+        position: absolute;
+        left: 8px;
+        top: 8px;
+        width: 24px;
+        height: 24px;
+        opacity: 0;
+      }
+      .comet i {
+        position: absolute;
+        width: 5px;
+        height: 5px;
+        margin: -2.5px 0 0 -2.5px;
+        border-radius: 50%;
+        background: #fff;
+      }
+      /* StatusDot: 7pt, ringed in the window colour, at the tile's top trailing corner. */
+      .dot {
+        position: absolute;
+        right: -6px;
+        top: -6px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: rgb(48, 209, 88);
+        box-shadow: 0 0 0 3px rgb(46, 49, 56);
+      }
+      #pointer {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 0;
+        height: 0;
+        opacity: 0;
+        transform-origin: 0 0;
+      }
+      #pointer svg {
+        position: absolute;
+        left: -2px;
+        top: -2px;
+        width: 30px;
+        height: 46px;
+        overflow: visible;
+        filter: drop-shadow(0 2px 3px rgba(0, 0, 0, 0.45));
+      }
+      .divider {
+        position: absolute;
+        top: 30px;
+        width: 2px;
+        height: 28px;
+        background: rgba(255, 255, 255, 0.14);
+      }
+
+      /* Close */
+      .mark {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .mark-icon {
+        display: block;
+        width: 150px;
+        height: 150px;
+        margin-bottom: 34px;
+      }
+      .mark-icon img {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+      .kicker {
+        display: block;
+        font-weight: 600;
+        font-size: 30px;
+        letter-spacing: -0.01em;
+        color: #86868b;
+        margin-bottom: 14px;
+      }
+      .title-big {
+        display: block;
+        font-weight: 600;
+        font-size: 112px;
+        line-height: 1.05;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+      }
+      .title-big .mask {
+        display: inline-block;
+        overflow: hidden;
+        padding: 0.04em 0.06em 0.12em;
+        vertical-align: bottom;
+      }
+      .title-big .word {
+        display: inline-block;
+        color: #f5f5f7;
+      }
+      .end-links {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 46px;
+      }
+      .end-url {
+        display: block;
+        font-weight: 600;
+        font-size: 36px;
+        letter-spacing: 0.01em;
+      }
+      .end-gh {
+        display: block;
+        font-weight: 500;
+        font-size: 30px;
+        letter-spacing: 0.02em;
+        color: #8e8e94;
+        margin-top: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="17.4" data-width="1920" data-height="1080">
+      <div id="backdrop">
+        <div class="aurora" id="au-navy"></div>
+        <div class="aurora" id="au-teal"></div>
+        <div class="aurora" id="au-band"></div>
+        <div class="aurora" id="au-violet"></div>
+        <div class="aurora" id="au-shade"></div>
+        <div class="aurora" id="au-floor"></div>
+        <div id="au-grain"></div>
+      </div>
+
+      <svg width="0" height="0" style="position: absolute">
+        <filter id="mb" x="-5%" y="0" width="110%" height="100%" color-interpolation-filters="sRGB"><feGaussianBlur id="mb-k" stdDeviation="0 0" /></filter>
+      </svg>
+      <section id="shot-window" class="scene clip" data-start="0" data-duration="14.7" data-track-index="0">
+        <div class="lens" id="lens-far"><div class="tilt"><div class="untilt"><div class="cam"></div></div></div></div>
+        <div class="lens" id="lens-mid"><div class="tilt"><div class="untilt"><div class="cam"></div></div></div></div>
+        <div class="lens" id="lens-sharp"><div class="tilt"><div class="untilt"><div class="cam"></div></div></div></div>
+        <div id="pointer"><div id="pointer-press"><svg viewBox="0 0 15 23"><path d="M1 1 L1 18.5 L5.2 14.6 L8 21.2 L10.9 20 L8.1 13.5 L13.6 13.5 Z" fill="#111" stroke="#fff" stroke-width="1.3" stroke-linejoin="round" /></svg></div></div>
+      </section>
+
+      <section id="shot-end" class="scene clip" data-start="14.1" data-duration="3.3" data-track-index="1">
+        <div class="mark" id="end-mark">
+          <div class="mark-icon" id="end-icon"><img src="assets/img/icon.png" alt="" /></div>
+          <span class="kicker" id="end-kicker">Introducing</span>
+          <span class="title-big" id="end-title"><span class="mask"><span class="word">Horizontal</span></span><span class="mask"><span class="word">Tabs</span></span></span>
+          <span class="end-links" id="end-links"><span class="end-url">termio.sh</span><span class="end-gh">github.com/termio-sh/termio</span></span>
+        </div>
+      </section>
+
+      <audio
+        id="bgm"
+        src="assets/bgm/track.wav"
+        data-start="0"
+        data-duration="17.4"
+        data-track-index="5"
+        data-automation='{"version":1,"lanes":[{"target":"volume","points":[{"t":0,"v":0.35},{"t":0.6,"v":0.8},{"t":16.2,"v":0.8},{"t":17.4,"v":0}]}]}'
+      ></audio>
+      <audio id="sfx-done" src="assets/sfx/click-soft.mp3" data-start="3.4" data-duration="0.36" data-track-index="6" data-volume="0.35"></audio>
+      <audio id="sfx-c1" src="assets/sfx/click.mp3" data-start="5.25" data-duration="0.3" data-track-index="7" data-volume="0.45"></audio>
+      <audio id="sfx-lift" src="assets/sfx/click-soft.mp3" data-start="8.7" data-duration="0.36" data-track-index="6" data-volume="0.5"></audio>
+      <audio id="sfx-drop" src="assets/sfx/click-soft.mp3" data-start="9.8" data-duration="0.36" data-track-index="7" data-volume="0.5"></audio>
+      <audio id="sfx-out" src="assets/sfx/whoosh.mp3" data-start="10.95" data-duration="0.57" data-track-index="8" data-volume="0.3"></audio>
+      <audio id="sfx-end" src="assets/sfx/whoosh-short.mp3" data-start="13.95" data-duration="0.57" data-track-index="8" data-volume="0.4"></audio>
+    </div>
+
+    <script>
+      // Tabs left to right as captured. Titles are short so the strip reads at a glance.
+      const TABS = [
+        { key: "a", icon: "claude.svg", title: "Trace tab drag" },
+        { key: "b", icon: "codex.svg", title: "Explain split tree" },
+        { key: "c", icon: "terminal.svg", title: "git log" },
+        { key: "d", icon: "terminal.svg", title: "Files" },
+      ];
+      const SHOTS = { a: "01-tab1", b: "02-tab2", c: "03-tab3", d: "04-tab4" };
+      const X0 = 340;
+      const SLOT = 306;
+
+      // Build the window once per lens; every element carries a class shared by both
+      // copies, so one tween drives the blurred and the sharp window together.
+      document.querySelectorAll(".cam").forEach((cam) => {
+        const win = document.createElement("div");
+        win.className = "win";
+        Object.entries(SHOTS).forEach(([key, file]) => {
+          const img = document.createElement("img");
+          img.className = `shot shot-${key}`;
+          img.src = `assets/cap/${file}.png`;
+          win.append(img);
+        });
+        const head = document.createElement("div");
+        head.className = "head";
+        [
+          ["#ff5f57", 36],
+          ["#febc2e", 76],
+          ["#28c840", 116],
+        ].forEach(([color, left]) => {
+          const light = document.createElement("div");
+          light.className = "light";
+          light.style.left = `${left}px`;
+          light.style.background = color;
+          head.append(light);
+        });
+        [
+          ["tb-sidebar", 190],
+          ["tb-bag", 260],
+          ["tb-plus", 1584],
+        ].forEach(([name, left]) => {
+          const img = document.createElement("img");
+          img.className = "tb";
+          img.src = `assets/img/${name}.png`;
+          img.style.left = `${left}px`;
+          head.append(img);
+        });
+        const track = document.createElement("div");
+        track.className = "track";
+        head.append(track);
+        for (let i = 1; i < TABS.length; i += 1) {
+          const divider = document.createElement("div");
+          divider.className = `divider divider-${i}`;
+          divider.style.left = `${X0 + i * SLOT - 2}px`;
+          head.append(divider);
+        }
+        TABS.forEach((tab) => {
+          const el = document.createElement("div");
+          el.className = `tab tab-${tab.key}`;
+          el.innerHTML = `<div class="face"></div><div class="glass"></div><div class="tile"><img src="assets/img/${tab.icon}" alt="" /><div class="comet">${"<i></i>".repeat(9)}</div><div class="dot"></div></div><div class="title">${tab.title}</div><div class="close"></div>`;
+          head.append(el);
+        });
+        const content = document.createElement("div");
+        content.className = "content";
+        content.append(...win.childNodes, head);
+        win.append(content);
+        const rim = document.createElement("div");
+        rim.className = "rim";
+        win.append(rim);
+        if (cam.closest("#lens-far")) {
+          const halo = document.createElement("div");
+          halo.className = "halo";
+          cam.append(halo);
+        }
+        cam.append(win);
+      });
+
+      const tl = gsap.timeline({ paused: true });
+      const FILM = 17.4;
+
+      // The story: Claude Code and Codex work side by side. Codex finishes; its dot pulls the
+      // eye, the pointer goes to it and opens it, then carries the finished tab to the front.
+      // The pointer leads and the camera follows it; nothing moves while something is clicked.
+      const ORDER = { a: 0, b: 1, c: 2, d: 3 };
+      Object.entries(ORDER).forEach(([key, slot]) => tl.set(`.tab-${key}`, { x: slot * SLOT }, 0));
+      const tabCenter = (slot) => X0 + slot * SLOT + 152;
+
+      const select = (key, at) => {
+        TABS.forEach((tab) => {
+          const on = tab.key === key;
+          tl.set(`.tab-${tab.key} .glass`, { opacity: on ? 1 : 0 }, at);
+          tl.set(`.tab-${tab.key} .title`, { attr: { class: on ? "title on" : "title" } }, at);
+        });
+        Object.keys(SHOTS).forEach((name) => tl.set(`.shot-${name}`, { opacity: name === key ? 1 : 0 }, at));
+      };
+      // No divider beside the selected pill: its own edge parts it; none at all mid-drag.
+      const dividers = (activeSlot, at, all = false) => {
+        for (let i = 1; i < TABS.length; i += 1) {
+          const hidden = all || activeSlot === i || activeSlot === i - 1;
+          tl.set(`.divider-${i}`, { opacity: hidden ? 0 : 1 }, at);
+        }
+      };
+      const hover = (key, on, at) => tl.set([`.tab-${key} .face`, `.tab-${key} .close`], { opacity: on ? 1 : 0 }, at);
+      // A working session's tile shows the comet instead of its mark.
+      const working = (key, on, at) => {
+        tl.set(`.tab-${key} .comet`, { opacity: on ? 1 : 0 }, at);
+        tl.set(`.tab-${key} .tile img`, { opacity: on ? 0 : 1 }, at);
+      };
+
+      select("a", 0);
+      dividers(0, 0);
+      working("a", true, 0);
+      working("b", true, 0);
+      tl.set(".dot", { scale: 0 }, 0);
+
+      // Camera: a proxy for (focus point in window pixels, scale, rotation) that places
+      // the focus at the frame's focus spot. All three lenses share it, and so does the mask.
+      const PAD = 600;
+      const FOCUS_SCREEN = [960 + PAD, 470 + PAD];
+      // Velocity curves, as cubic-beziers solved for x. The camera's leaves rest gently and
+      // spends most of the move decelerating; the pointer's is a hand's: quick, then a long settle.
+      const bezier = (x1, y1, x2, y2) => {
+        const cx = 3 * x1, bx = 3 * (x2 - x1) - cx, ax = 1 - cx - bx;
+        const cy = 3 * y1, by = 3 * (y2 - y1) - cy, ay = 1 - cy - by;
+        const X = (t) => ((ax * t + bx) * t + cx) * t;
+        const Y = (t) => ((ay * t + by) * t + cy) * t;
+        return (p) => {
+          if (p <= 0) return 0;
+          if (p >= 1) return 1;
+          let lo = 0, hi = 1, t = p;
+          for (let i = 0; i < 40; i += 1) {
+            if (X(t) < p) lo = t;
+            else hi = t;
+            t = (lo + hi) / 2;
+          }
+          return Y(t);
+        };
+      };
+      const GLIDE = bezier(0.4, 0, 0.1, 1);
+      const HAND = bezier(0.3, 0, 0.15, 1);
+      const slope = (ease, p) => (ease(Math.min(1, p + 0.002)) - ease(Math.max(0, p - 0.002))) / (Math.min(1, p + 0.002) - Math.max(0, p - 0.002));
+
+      // Scale travels as its logarithm, so a zoom changes by the same ratio every frame.
+      const cam = { px: 80, py: 44, ls: Math.log(2.6), r: -9, sx: FOCUS_SCREEN[0], sy: FOCUS_SCREEN[1], far: 5.5, mid: 2.5 };
+      const state = { ...cam };
+      const pans = [];
+      const camTo = (to, at, duration, { pan = false, ease = GLIDE } = {}) => {
+        const target = { ...to };
+        if ("s" in target) {
+          target.ls = Math.log(target.s);
+          delete target.s;
+        }
+        const from = Object.fromEntries(Object.keys(target).map((key) => [key, state[key]]));
+        if (pan) pans.push({ at, duration, ease, dx: (target.px - from.px) * Math.exp(state.ls) });
+        Object.assign(state, target);
+        tl.fromTo(cam, from, { ...target, duration, ease, immediateRender: false }, at);
+      };
+      // The pointer lives in window pixels and is drawn flat above the lenses, so it stays crisp.
+      const hand = { x: 1500, y: 560, o: 0, k: 1 };
+      const handState = { ...hand };
+      const handTo = (to, at, duration, ease = HAND) => {
+        const from = Object.fromEntries(Object.keys(to).map((key) => [key, handState[key]]));
+        Object.assign(handState, to);
+        tl.fromTo(hand, from, { ...to, duration, ease, immediateRender: false }, at);
+      };
+      const click = (at) => {
+        handTo({ k: 0.86 }, at - 0.06, 0.06, "power2.out");
+        handTo({ k: 1 }, at + 0.06, 0.16, "power2.out");
+      };
+
+      // Motion blur along the strip, as a camera shutter would give it: horizontal only, in
+      // proportion to the pan's screen speed, and zero whenever the camera is at rest.
+      const blurKernel = document.getElementById("mb-k");
+      const pointer = document.getElementById("pointer");
+      const pointerPress = document.getElementById("pointer-press");
+      const comets = [...document.querySelectorAll(".comet")];
+      const RING = [[0, 0], [1, 0], [2, 0], [2, 1], [2, 2], [1, 2], [0, 2], [0, 1]];
+      const panSpeed = (time) =>
+        pans.reduce((sum, pan) => {
+          const p = (time - pan.at) / pan.duration;
+          return p <= 0 || p >= 1 ? sum : sum + Math.abs(pan.dx) * slope(pan.ease, p) / pan.duration;
+        }, 0);
+      const render = () => {
+        const time = tl.time();
+        const s = Math.exp(cam.ls);
+        const rad = (cam.r * Math.PI) / 180;
+        const cos = Math.cos(rad);
+        const sin = Math.sin(rad);
+        const ox = cam.sx - s * (cos * cam.px - sin * cam.py);
+        const oy = cam.sy - s * (sin * cam.px + cos * cam.py);
+        gsap.set(".cam", { x: ox, y: oy, rotation: cam.r, scale: s });
+        // The focus band turns with the window about the focus spot; the inner layer turns back.
+        gsap.set(".tilt", { rotation: cam.r, transformOrigin: `${FOCUS_SCREEN[0]}px ${FOCUS_SCREEN[1]}px` });
+        gsap.set(".untilt", { rotation: -cam.r, transformOrigin: `${FOCUS_SCREEN[0]}px ${FOCUS_SCREEN[1]}px` });
+        const streak = (0.28 * panSpeed(time)) / 60 / s;
+        const shutter = streak > 0.05 ? "url(#mb) " : "";
+        blurKernel.setAttribute("stdDeviation", `${streak.toFixed(3)} 0`);
+        [
+          ["#lens-far .content", cam.far],
+          ["#lens-mid .content", cam.mid],
+          ["#lens-sharp .content", 0],
+        ].forEach(([sel, depth]) => {
+          const soft = depth / s > 0.01 ? `blur(${(depth / s).toFixed(3)}px)` : "";
+          const filter = `${shutter}${soft}`.trim();
+          document.querySelectorAll(sel).forEach((el) => (el.style.filter = filter || "none"));
+        });
+        // The pointer: window point to screen, turned and scaled with the window.
+        const hx = ox + s * (cos * hand.x - sin * hand.y) - PAD;
+        const hy = oy + s * (sin * hand.x + cos * hand.y) - PAD;
+        gsap.set(pointer, { x: hx, y: hy, rotation: cam.r, scale: s * 0.5, opacity: hand.o });
+        gsap.set(pointerPress, { scale: hand.k, transformOrigin: "0 0" });
+        // WorkingIndicator, frame by frame: head brightness and a fifth's swell, 1.1s a turn.
+        const head = ((time % 1.1) / 1.1) * 8;
+        comets.forEach((comet) => {
+          const dots = comet.children;
+          const place = (el, col, row, opacity, scale) => {
+            el.style.left = `${12 + (col - 1) * 7.2}px`;
+            el.style.top = `${12 + (row - 1) * 7.2}px`;
+            el.style.opacity = opacity;
+            el.style.transform = `scale(${scale})`;
+          };
+          place(dots[0], 1, 1, 0.5, 1);
+          RING.forEach(([col, row], i) => {
+            const raw = Math.abs(i - head);
+            const distance = Math.min(raw, 8 - raw);
+            place(dots[i + 1], col, row, Math.max(0.5, 1 - distance / 4), 1 + 0.2 * Math.max(0, 1 - distance / 2));
+          });
+        });
+      };
+      tl.eventCallback("onUpdate", render);
+      const lens = "#shot-window";
+      tl.set(lens, { "--h1": "70px" }, 0);
+
+      // Cold open: out of black, the camera rests on the traffic lights and glides right
+      // until it frames the two working agents, centred on the seam between them.
+      tl.fromTo("#shot-window", { opacity: 0 }, { opacity: 1, duration: 0.7, ease: "power2.out" }, 0);
+      tl.fromTo("#shot-window", { filter: "blur(10px)" }, { filter: "blur(0px)", duration: 0.8, ease: "expo.out" }, 0);
+      tl.set("#shot-window", { filter: "none" }, 0.81);
+      camTo({ px: X0 + SLOT, s: 2.4 }, 0.5, 2.4, { pan: true });
+
+      // Codex finishes: its comet gives way to its mark, and the done dot pops.
+      working("b", false, 3.4);
+      tl.fromTo(".tab-b .dot", { scale: 0 }, { scale: 1, duration: 0.35, ease: "back.out(2.2)", immediateRender: false }, 3.4);
+
+      // The pointer comes up to Codex's tab; the camera follows a beat behind and lands.
+      const codex = tabCenter(ORDER.b);
+      handTo({ o: 1 }, 3.8, 0.25, "power1.out");
+      handTo({ x: codex - 40, y: 46 }, 3.8, 0.8);
+      hover("b", true, 4.6);
+      camTo({ px: codex }, 4.0, 1.0, { pan: true });
+      // Click. Engaging with a finished session clears its dot (TermioStore.markSeen).
+      click(5.25);
+      select("b", 5.25);
+      dividers(ORDER.b, 5.25);
+      tl.to(".tab-b .dot", { scale: 0, duration: 0.15, ease: "power2.in" }, 5.25);
+      tl.set(".tab-b .face", { opacity: 0 }, 5.25);
+      // What changed is Codex's answer below the strip: open the focus onto it, then hold.
+      tl.to(lens, { "--h1": "190px", duration: 0.7, ease: "power2.inOut" }, 5.35);
+
+      // Pull back to the whole strip and settle.
+      camTo({ py: 60, s: 1.12, r: -6 }, 6.9, 1.5);
+      tl.to(lens, { "--h1": "80px", duration: 1.0, ease: "power2.inOut" }, 6.9);
+
+      // Drag Codex to the front. The tab follows the pointer 1:1, Claude Code steps aside on
+      // the app's own 0.2s smooth curve, the dividers stay hidden while anything moves, and
+      // dropping leaves the selection where it was (store.moveTab: selection unchanged).
+      tl.set(".tab-b .face", { opacity: 1 }, 8.7);
+      tl.set(".tab-b .close", { opacity: 0 }, 8.7);
+      handTo({ k: 0.86 }, 8.64, 0.06, "power2.out");
+      dividers(-9, 8.7, true);
+      tl.to(".tab-b", { x: 0, duration: 0.9, ease: "power2.inOut" }, 8.8);
+      handTo({ x: codex - 40 - SLOT }, 8.8, 0.9, "power2.inOut");
+      tl.to(".tab-a", { x: 1 * SLOT, duration: 0.2, ease: "power2.out" }, 9.2);
+      tl.set(".tab-b .face", { opacity: 0 }, 9.8);
+      handTo({ k: 1 }, 9.8, 0.16, "power2.out");
+      dividers(0, 9.8);
+      // Let go, and the hand drifts off the strip.
+      handTo({ x: codex - 40 - SLOT + 90, y: 150, o: 0 }, 10.4, 0.7, "power2.inOut");
+
+      // Pull out: the window turns flat, and the whole layout comes into focus on Codex's answer.
+      camTo({ px: 827, py: 561, s: 0.84, r: 0, sy: 540 + PAD, far: 0, mid: 0 }, 10.8, 1.8);
+      tl.to(lens, { "--h1": "700px", duration: 1.8, ease: GLIDE }, 10.8);
+
+      // Close: inverse zoom-through to the name and the links.
+      tl.to("#shot-window", { scale: 0.86, filter: "blur(18px)", opacity: 0.1, duration: 0.3, ease: "power3.in", transformOrigin: "50% 50%" }, 13.9);
+      tl.fromTo("#end-icon", { scale: 1.25, opacity: 0, filter: "blur(12px)" }, { scale: 1, opacity: 1, filter: "blur(0px)", duration: 0.7, ease: "expo.out" }, 14.15);
+      tl.fromTo("#end-kicker", { opacity: 0, y: 12 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 14.3);
+      tl.fromTo("#end-title .word", { yPercent: 125, filter: "blur(6px)" }, { yPercent: 0, filter: "blur(0px)", duration: 0.9, ease: "expo.out", stagger: 0.1 }, 14.4);
+      tl.fromTo("#end-links", { opacity: 0, y: 14 }, { opacity: 1, y: 0, duration: 0.6, ease: "power3.out" }, 15.2);
+      tl.to("#end-mark", { opacity: 0, duration: 0.6, ease: "power1.in" }, 16.8);
+
+      // The aurora flows for the whole film; each layer swings on its own period.
+      const flow = (sel, to, period) =>
+        tl.to(sel, { ...to, duration: period, ease: "sine.inOut", yoyo: true, repeat: Math.ceil(FILM / period) }, 0);
+      tl.set("#au-band", { rotation: 24 }, 0);
+      // The window's light breathes on one slow period.
+      const BREATH = 4.5;
+      tl.fromTo(".halo", { opacity: 0.4, scale: 0.98 }, { opacity: 1, scale: 1.03, duration: BREATH / 2, ease: "sine.inOut", yoyo: true, repeat: Math.ceil(FILM / (BREATH / 2)) }, 0);
+      tl.fromTo(".rim", { opacity: 0.35 }, { opacity: 1, duration: BREATH / 2, ease: "sine.inOut", yoyo: true, repeat: Math.ceil(FILM / (BREATH / 2)) }, 0);
+      flow("#au-band", { x: 260, y: 140, rotation: 10, scaleY: 1.35 }, 5.3);
+      flow("#au-navy", { x: 320, y: 90, scale: 1.12 }, 6.7);
+      flow("#au-teal", { x: 420, y: 220, scale: 1.25 }, 4.9);
+      flow("#au-violet", { x: -440, y: 200, scale: 1.2 }, 7.3);
+      flow("#au-shade", { x: 340, y: -220 }, 6.1);
+      tl.to({}, { duration: FILM }, 0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
