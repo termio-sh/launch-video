@@ -32,3 +32,16 @@ These files are referenced by `index.html` but are not in the repo, because thei
 ```sh
 npx hyperframes@0.8.169 render . -o termio-horizontal-tabs-4k.mp4 --fps 60 --quality delivery --resolution 4k
 ```
+
+## Cover
+
+`cover/` is the source of `renders/cover.jpg`: a 1440×1080 composition (icon and
+"Termio" above "横向标签页") over a frame of the video at 3.77 s, rendered at 2×.
+
+```sh
+cd cover
+npx hyperframes@0.8.169 snapshot . --at 0.95 --zoom "0,0,1440,1080" --zoom-scale 2 -o out
+```
+
+Save the frame as JPEG at quality 92. When the video changes, replace
+`cover/assets/bg.png` with the new frame and render the cover again.

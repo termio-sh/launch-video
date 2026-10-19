@@ -1,0 +1,122 @@
+{
+  "version": 1,
+  "historyId": "a26fc118-857b-45ef-83e1-8a00de938748",
+  "currentRevision": null,
+  "pendingChanges": false,
+  "files": {
+    "assets/icon.png": {
+      "hash": "d58933c6dc24e69ec1e9dc9b9e493c4ad6a38c000e22e18f58a35cb433ef97a4",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/a26fc118-857b-45ef-83e1-8a00de938748/blobs/d5/d58933c6dc24e69ec1e9dc9b9e493c4ad6a38c000e22e18f58a35cb433ef97a4"
+    },
+    "assets/sky.png": {
+      "hash": "9f81be446bb70aedc1f6b897145b49faed10e135ae902dbc358b49dd5699947a",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/a26fc118-857b-45ef-83e1-8a00de938748/blobs/9f/9f81be446bb70aedc1f6b897145b49faed10e135ae902dbc358b49dd5699947a"
+    },
+    "hyperframes.json": {
+      "hash": "ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/a26fc118-857b-45ef-83e1-8a00de938748/blobs/ad/ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17"
+    },
+    "index.html": {
+      "hash": "e358fbff021c7e8247006957e2ca05c6acf2ba36a038b9645f9d200a17c25670",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/a26fc118-857b-45ef-83e1-8a00de938748/blobs/e3/e358fbff021c7e8247006957e2ca05c6acf2ba36a038b9645f9d200a17c25670"
+    },
+    "package.json": {
+      "hash": "a5259f5b63fa4c5a843bb5b8963c308f25d5b688fca420465adb10ffbb1f1a73",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/a26fc118-857b-45ef-83e1-8a00de938748/blobs/a5/a5259f5b63fa4c5a843bb5b8963c308f25d5b688fca420465adb10ffbb1f1a73"
+    },
+    "assets/bg.png": {
+      "hash": "a633681f61a1640e4f8bd8e4ebc5f3ac27dfda1a83dee43ba08f03a54c866eaa",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/a26fc118-857b-45ef-83e1-8a00de938748/blobs/a6/a633681f61a1640e4f8bd8e4ebc5f3ac27dfda1a83dee43ba08f03a54c866eaa"
+    }
+  },
+  "revisions": {},
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "bdbd40fa-c4ef-496e-a396-7827e3969e1d-0"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "1d1ee356-d540-4b9d-9a22-515f371fd89d-0",
+        "image": "/private/tmp/claude-501/-Users-yuanjiwei-Documents-GitHub-termio/0a6137ae-7eda-4b99-8b85-1d0b0f44073d/scratchpad/covercheck/frame-00-at-0s.png",
+        "time": 0,
+        "metadata": {
+          "width": 1440,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792433427503,
+        "contentHash": "9683657f43b49dc6134f1c2218f0c9b34944dfce779a86256eea229f47f8ce25",
+        "revision": null,
+        "inputFingerprint": "522210861565055173ba2a853d325370e27774ca86d5065fdeabfbac236c48f6",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "full",
+        "id": "1d1ee356-d540-4b9d-9a22-515f371fd89d-1",
+        "image": "/private/tmp/claude-501/-Users-yuanjiwei-Documents-GitHub-termio/0a6137ae-7eda-4b99-8b85-1d0b0f44073d/scratchpad/covercheck/frame-01-at-0.95s.png",
+        "time": 0.95,
+        "metadata": {
+          "width": 1440,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792433427503,
+        "contentHash": "9683657f43b49dc6134f1c2218f0c9b34944dfce779a86256eea229f47f8ce25",
+        "revision": null,
+        "inputFingerprint": "522210861565055173ba2a853d325370e27774ca86d5065fdeabfbac236c48f6",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      },
+      {
+        "scope": "crop",
+        "id": "bdbd40fa-c4ef-496e-a396-7827e3969e1d-0",
+        "image": "/private/tmp/claude-501/-Users-yuanjiwei-Documents-GitHub-termio/0a6137ae-7eda-4b99-8b85-1d0b0f44073d/scratchpad/covercheck2/frame-00-at-0.95s.png",
+        "time": 0.95,
+        "metadata": {
+          "width": 2880,
+          "height": 2160,
+          "crop": {
+            "x": 0,
+            "y": 0,
+            "width": 1440,
+            "height": 1080
+          },
+          "zoom": {
+            "kind": "region",
+            "region": {
+              "x": 0,
+              "y": 0,
+              "width": 1440,
+              "height": 1080
+            }
+          },
+          "zoomScale": 2,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792433455163,
+        "contentHash": "fc50265564492ffb895fc445c24d1a21f1c5b2cf4eb19560e1515eb0b7ab2ba8",
+        "revision": null,
+        "inputFingerprint": "522210861565055173ba2a853d325370e27774ca86d5065fdeabfbac236c48f6",
+        "inputScope": "local-project-files",
+        "attribution": "unversioned"
+      }
+    ]
+  }
+}

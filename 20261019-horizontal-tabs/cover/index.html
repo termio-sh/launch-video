@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="zh">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1440, height=1080" />
+    <title>termio tabs cover</title>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1440px; height: 1080px; overflow: hidden; background: #070710; }
+      #root { position: relative; width: 1440px; height: 1080px; overflow: hidden; font-family: "PingFang SC", "SF Pro Display", sans-serif; color: #f5f5f7; }
+      #bg { position: absolute; left: 0; top: 130px; width: 1440px; height: 1080px; }
+      #sky { position: absolute; left: 0; top: 0; width: 1440px; height: 140px; background: url("assets/sky.png") 0 0 / 1440px 140px; }
+      /* Keep the sky dark enough for type; the strip below stays bright. */
+      #shade { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(5, 8, 20, 0.72) 0%, rgba(5, 8, 20, 0.35) 34%, rgba(5, 8, 20, 0) 50%, rgba(5, 8, 20, 0) 78%, rgba(5, 8, 20, 0.55) 100%); }
+      .block { position: absolute; left: 96px; top: 120px; }
+      .mark { display: block; width: 88px; height: 88px; }
+      .brand { display: flex; align-items: center; gap: 18px; }
+      .brand img { width: 64px; height: 64px; }
+      .brand span { font-family: "SF Pro Display", sans-serif; font-weight: 600; font-size: 44px; letter-spacing: -0.01em; }
+      .pill { margin-left: 8px; font-size: 26px; font-weight: 600; padding: 8px 20px; border-radius: 999px; color: #dbe7ff;
+        background: linear-gradient(180deg, rgba(255,255,255,0.18), rgba(255,255,255,0.05)), rgba(30, 50, 100, 0.45);
+        border: 1px solid rgba(200, 220, 255, 0.35); box-shadow: inset 0 1px 0 rgba(255,255,255,0.3); }
+      h1 { margin-top: 30px; font-weight: 600; font-size: 136px; line-height: 1; letter-spacing: 0.02em;
+        text-shadow: 0 8px 40px rgba(60, 120, 255, 0.45); }
+      .sub { margin-top: 26px; font-weight: 500; font-size: 42px; color: rgba(235, 240, 255, 0.82); letter-spacing: 0.04em; }
+      .foot { position: absolute; left: 96px; bottom: 70px; font-family: "SF Pro Display", sans-serif; font-weight: 500; font-size: 30px; color: rgba(235, 240, 255, 0.7); letter-spacing: 0.02em; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="1" data-width="1440" data-height="1080">
+      <div id="sky"></div>
+      <img id="bg" src="assets/bg.png" alt="" />
+      <div id="shade"></div>
+      <div class="block">
+        <div class="brand"><img src="assets/icon.png" alt="" /><span>Termio</span></div>
+        <h1>横向标签页</h1>
+      </div>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.to({}, { duration: 1 }, 0);
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
