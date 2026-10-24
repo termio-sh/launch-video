@@ -1,0 +1,304 @@
+{
+  "version": 1,
+  "historyId": "b18cba21-6170-4662-b80c-b6ab9b5bb531",
+  "currentRevision": "e2a060d8-aae2-441f-aca2-f1a5f9fdc6a1",
+  "pendingChanges": false,
+  "files": {
+    "assets/cap/phone-keys.webp": {
+      "hash": "59ca76b7d4e5ad252bd55ee2ecbb3ac2b2c07cb12aa9c6da8e977b5d775bbedf",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/59/59ca76b7d4e5ad252bd55ee2ecbb3ac2b2c07cb12aa9c6da8e977b5d775bbedf"
+    },
+    "assets/cap/phone-mirror.webp": {
+      "hash": "bf166500371ee7ca0ed6e9db8e26a37cee43905d77fcd542d2e4e1cadf2856a3",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/bf/bf166500371ee7ca0ed6e9db8e26a37cee43905d77fcd542d2e4e1cadf2856a3"
+    },
+    "assets/cap/phone-projects.webp": {
+      "hash": "6f9d7e46b6326375be52327d1e6da8c3eb1625c377602d550bfdfff6443da5ce",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/6f/6f9d7e46b6326375be52327d1e6da8c3eb1625c377602d550bfdfff6443da5ce"
+    },
+    "hyperframes.json": {
+      "hash": "ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/ad/ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17"
+    },
+    "index.html": {
+      "hash": "e7b1ffe82e3e1f249ff9c90c14d0e68e3b5c1f0cb6ce441d325b0cb94a829c29",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/e7/e7b1ffe82e3e1f249ff9c90c14d0e68e3b5c1f0cb6ce441d325b0cb94a829c29"
+    },
+    "package.json": {
+      "hash": "f38d808a73cb93c6d86df175a63fe45b0e147fd4f2de5d022aec9461d81441b8",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/f3/f38d808a73cb93c6d86df175a63fe45b0e147fd4f2de5d022aec9461d81441b8"
+    },
+    "snaps/frame-00-at-0s.png": {
+      "hash": "4dc8a468bc27efdb004557970d4d45bc2d1304c2f024485a024f418fc8f0dd56",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/4d/4dc8a468bc27efdb004557970d4d45bc2d1304c2f024485a024f418fc8f0dd56"
+    },
+    "snaps/frame-01-at-2s.png": {
+      "hash": "589b2ebc19ed74dc8383fc6fee4c76173504302700ee0da5a2f8936636bae739",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/58/589b2ebc19ed74dc8383fc6fee4c76173504302700ee0da5a2f8936636bae739"
+    },
+    "snaps/frame-02-at-2.35s.png": {
+      "hash": "d352ce96001e7c750a88a67b54f6235ce80b224a90181c21925e76accdbbb905",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/d3/d352ce96001e7c750a88a67b54f6235ce80b224a90181c21925e76accdbbb905"
+    },
+    "snaps/frame-03-at-2.7s.png": {
+      "hash": "a6abaa5f0d3e0c6ee8e6ced5d9be46f537efbe953d7a3929544fc29d88aa45f6",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/a6/a6abaa5f0d3e0c6ee8e6ced5d9be46f537efbe953d7a3929544fc29d88aa45f6"
+    },
+    "snaps/frame-04-at-4.1s.png": {
+      "hash": "d0be1e764f8070d2077a762943811fcd4577c97b91e9b90dbadb9f974bb2a054",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/d0/d0be1e764f8070d2077a762943811fcd4577c97b91e9b90dbadb9f974bb2a054"
+    },
+    "snaps/frame-05-at-5s.png": {
+      "hash": "ddea67ea8581b08ab1520f95951884a6c45a5ed39d9b2be0de7c8d23ba883ea0",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/dd/ddea67ea8581b08ab1520f95951884a6c45a5ed39d9b2be0de7c8d23ba883ea0"
+    },
+    "snaps/frame-06-at-6.5s.png": {
+      "hash": "ca8f1ae884f7aecbb1fa038b65107e32a07627c4eb5966e7fa1d33919afbec51",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/ca/ca8f1ae884f7aecbb1fa038b65107e32a07627c4eb5966e7fa1d33919afbec51"
+    },
+    "snaps/frame-07-at-6.79s.png": {
+      "hash": "40e96fdcc1f081b873763864894fab37bca2b2b84db0415c4254c7d1b7bea388",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/40/40e96fdcc1f081b873763864894fab37bca2b2b84db0415c4254c7d1b7bea388"
+    },
+    "snaps/contact-sheet.jpg": {
+      "hash": "0af6bc1113443d1ba6afbb23e4ef7dee75389559c1207f9cc607d91044d46355",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/0a/0af6bc1113443d1ba6afbb23e4ef7dee75389559c1207f9cc607d91044d46355"
+    }
+  },
+  "revisions": {
+    "e2a060d8-aae2-441f-aca2-f1a5f9fdc6a1": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792882350323,
+      "endedAt": 1792882350554,
+      "files": {
+        "snaps/contact-sheet.jpg": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/0a/0af6bc1113443d1ba6afbb23e4ef7dee75389559c1207f9cc607d91044d46355"
+        },
+        "snaps/frame-00-at-0s.png": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/4d/4dc8a468bc27efdb004557970d4d45bc2d1304c2f024485a024f418fc8f0dd56"
+        },
+        "snaps/frame-01-at-2s.png": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/58/589b2ebc19ed74dc8383fc6fee4c76173504302700ee0da5a2f8936636bae739"
+        },
+        "snaps/frame-02-at-2.35s.png": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/d3/d352ce96001e7c750a88a67b54f6235ce80b224a90181c21925e76accdbbb905"
+        },
+        "snaps/frame-03-at-2.7s.png": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/a6/a6abaa5f0d3e0c6ee8e6ced5d9be46f537efbe953d7a3929544fc29d88aa45f6"
+        },
+        "snaps/frame-04-at-4.1s.png": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/d0/d0be1e764f8070d2077a762943811fcd4577c97b91e9b90dbadb9f974bb2a054"
+        },
+        "snaps/frame-05-at-5s.png": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/dd/ddea67ea8581b08ab1520f95951884a6c45a5ed39d9b2be0de7c8d23ba883ea0"
+        },
+        "snaps/frame-06-at-6.5s.png": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/ca/ca8f1ae884f7aecbb1fa038b65107e32a07627c4eb5966e7fa1d33919afbec51"
+        },
+        "snaps/frame-07-at-6.79s.png": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/40/40e96fdcc1f081b873763864894fab37bca2b2b84db0415c4254c7d1b7bea388"
+        }
+      }
+    }
+  },
+  "checks": {
+    "latest": null,
+    "revisions": {},
+    "unversioned": []
+  },
+  "snapshots": {
+    "latest": {
+      "revision": null,
+      "id": "d26cf58b-3808-487d-a6d9-406c39baf9ee-7"
+    },
+    "revisions": {},
+    "unversioned": [
+      {
+        "scope": "full",
+        "id": "d26cf58b-3808-487d-a6d9-406c39baf9ee-0",
+        "image": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-phone/snaps/frame-00-at-0s.png",
+        "time": 0,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792882326629,
+        "contentHash": "4dc8a468bc27efdb004557970d4d45bc2d1304c2f024485a024f418fc8f0dd56",
+        "revision": null,
+        "inputFingerprint": "9e8ca16c0b4b5f64f0fff550a1ec60436a1d6f1b25cff5f9f991d39bfbed444a",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "d26cf58b-3808-487d-a6d9-406c39baf9ee-1",
+        "image": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-phone/snaps/frame-01-at-2s.png",
+        "time": 2,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792882326629,
+        "contentHash": "589b2ebc19ed74dc8383fc6fee4c76173504302700ee0da5a2f8936636bae739",
+        "revision": null,
+        "inputFingerprint": "9e8ca16c0b4b5f64f0fff550a1ec60436a1d6f1b25cff5f9f991d39bfbed444a",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "d26cf58b-3808-487d-a6d9-406c39baf9ee-2",
+        "image": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-phone/snaps/frame-02-at-2.35s.png",
+        "time": 2.35,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792882326629,
+        "contentHash": "d352ce96001e7c750a88a67b54f6235ce80b224a90181c21925e76accdbbb905",
+        "revision": null,
+        "inputFingerprint": "9e8ca16c0b4b5f64f0fff550a1ec60436a1d6f1b25cff5f9f991d39bfbed444a",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "d26cf58b-3808-487d-a6d9-406c39baf9ee-3",
+        "image": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-phone/snaps/frame-03-at-2.7s.png",
+        "time": 2.7,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792882326629,
+        "contentHash": "a6abaa5f0d3e0c6ee8e6ced5d9be46f537efbe953d7a3929544fc29d88aa45f6",
+        "revision": null,
+        "inputFingerprint": "9e8ca16c0b4b5f64f0fff550a1ec60436a1d6f1b25cff5f9f991d39bfbed444a",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "d26cf58b-3808-487d-a6d9-406c39baf9ee-4",
+        "image": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-phone/snaps/frame-04-at-4.1s.png",
+        "time": 4.1,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792882326629,
+        "contentHash": "d0be1e764f8070d2077a762943811fcd4577c97b91e9b90dbadb9f974bb2a054",
+        "revision": null,
+        "inputFingerprint": "9e8ca16c0b4b5f64f0fff550a1ec60436a1d6f1b25cff5f9f991d39bfbed444a",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "d26cf58b-3808-487d-a6d9-406c39baf9ee-5",
+        "image": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-phone/snaps/frame-05-at-5s.png",
+        "time": 5,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792882326629,
+        "contentHash": "ddea67ea8581b08ab1520f95951884a6c45a5ed39d9b2be0de7c8d23ba883ea0",
+        "revision": null,
+        "inputFingerprint": "9e8ca16c0b4b5f64f0fff550a1ec60436a1d6f1b25cff5f9f991d39bfbed444a",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "d26cf58b-3808-487d-a6d9-406c39baf9ee-6",
+        "image": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-phone/snaps/frame-06-at-6.5s.png",
+        "time": 6.5,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792882326629,
+        "contentHash": "ca8f1ae884f7aecbb1fa038b65107e32a07627c4eb5966e7fa1d33919afbec51",
+        "revision": null,
+        "inputFingerprint": "9e8ca16c0b4b5f64f0fff550a1ec60436a1d6f1b25cff5f9f991d39bfbed444a",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      },
+      {
+        "scope": "full",
+        "id": "d26cf58b-3808-487d-a6d9-406c39baf9ee-7",
+        "image": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-phone/snaps/frame-07-at-6.79s.png",
+        "time": 6.79,
+        "metadata": {
+          "width": 1920,
+          "height": 1080,
+          "zoomScale": 1,
+          "browserGpuMode": "auto",
+          "warnings": [],
+          "partial": false
+        },
+        "createdAt": 1792882326629,
+        "contentHash": "40e96fdcc1f081b873763864894fab37bca2b2b84db0415c4254c7d1b7bea388",
+        "revision": null,
+        "inputFingerprint": "9e8ca16c0b4b5f64f0fff550a1ec60436a1d6f1b25cff5f9f991d39bfbed444a",
+        "inputScope": "local-project-files",
+        "attribution": "inputs-changed"
+      }
+    ]
+  },
+  "renders": {
+    "latest": {
+      "id": "8630447f-78b4-4699-9630-bca5ed5ca5c9",
+      "completedAt": 1792882374252,
+      "output": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-phone/renders/landing-phone-v1-1080p.mp4",
+      "status": "completed",
+      "revision": "e2a060d8-aae2-441f-aca2-f1a5f9fdc6a1"
+    },
+    "retainedRevisions": [
+      "e2a060d8-aae2-441f-aca2-f1a5f9fdc6a1"
+    ]
+  },
+  "pendingArtifactCleanup": []
+}
