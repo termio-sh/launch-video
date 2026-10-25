@@ -8,6 +8,7 @@ Each folder is one video: its source composition, assets and final renders.
 | [`20261019-horizontal-tabs`](20261019-horizontal-tabs) | Horizontal tabs: agent sessions in one row, switch with a click, drag to reorder |
 | [`20261024-landing-status`](20261024-landing-status) | Landing loop: see which agent needs you |
 | [`20261024-landing-status-v2`](20261024-landing-status-v2) | Landing loop v2: live agent status on a clean demo project |
+| [`20261024-landing-survive`](20261024-landing-survive) | Landing loop: sessions survive quit |
 | [`20261024-landing-agents`](20261024-landing-agents) | Landing loop: every agent, one switch |
 | [`20261024-landing-phone`](20261024-landing-phone) | Landing loop: your sessions, on your phone |
 
