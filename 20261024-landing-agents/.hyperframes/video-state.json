@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1",
-  "currentRevision": "d24fa226-d24c-4ad2-9d2d-1c2259cb0040",
+  "currentRevision": "4cfe5ced-2e94-4ff9-8228-0be8ff826bf2",
   "pendingChanges": false,
   "files": {
     "assets/cap/agents.png": {
@@ -13,24 +13,28 @@
       "content": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/ad/ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17"
     },
     "index.html": {
-      "hash": "d4aff4193c620f329405726dfd3e177f4e0a706ad44ee38941360a496f02c040",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/d4/d4aff4193c620f329405726dfd3e177f4e0a706ad44ee38941360a496f02c040"
+      "hash": "8ba52bd883eb9ccc70ba13b9d7c7575254d072106a672cafeb518e90ba03cf7d",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/8b/8ba52bd883eb9ccc70ba13b9d7c7575254d072106a672cafeb518e90ba03cf7d"
     },
     "package.json": {
       "hash": "68de3ddecb9331e3a1885b169fd4ad59efac4fa5d7974889d303d29edb5822d2",
       "content": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/68/68de3ddecb9331e3a1885b169fd4ad59efac4fa5d7974889d303d29edb5822d2"
     },
-    "snaps/frame-00-at-2.4s.png": {
-      "hash": "c34ec4be143e313d0fb677fb11df86e1bd9fe5da7175d10ac1b696a3779e4299",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/c3/c34ec4be143e313d0fb677fb11df86e1bd9fe5da7175d10ac1b696a3779e4299"
+    "README.md": {
+      "hash": "2e49a4f9688c7dded939667e50f63c29ce8d05d27146b1ed63a387d3fc845376",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/2e/2e49a4f9688c7dded939667e50f63c29ce8d05d27146b1ed63a387d3fc845376"
     },
-    "snaps/frame-01-at-4.6s.png": {
-      "hash": "dd5b5956fbe00a609753f9d3d3ed67b6e597b81011abd3bc0dc2b52417fbb065",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/dd/dd5b5956fbe00a609753f9d3d3ed67b6e597b81011abd3bc0dc2b52417fbb065"
+    "assets/fonts/SF-Pro-Display-Medium.otf": {
+      "hash": "8f9c53c801b8e0e45743596aa3281329d04675528faeab7dcbfbaa34cd1577c7",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/8f/8f9c53c801b8e0e45743596aa3281329d04675528faeab7dcbfbaa34cd1577c7"
     },
-    "snaps/contact-sheet.jpg": {
-      "hash": "e98fc59ee8bf5b5d00c89c2df5a82c63902fd869149bf7c0fcaff1bcecdfb0b4",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/e9/e98fc59ee8bf5b5d00c89c2df5a82c63902fd869149bf7c0fcaff1bcecdfb0b4"
+    "assets/fonts/SF-Pro-Display-Regular.otf": {
+      "hash": "fa201942bfbbad09b0be750686a747d490901b3bc4618ecdfc30382cf28d4704",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/fa/fa201942bfbbad09b0be750686a747d490901b3bc4618ecdfc30382cf28d4704"
+    },
+    "assets/fonts/SF-Pro-Display-Semibold.otf": {
+      "hash": "ef94ac2356af4938fc96c35af41cc9e5788b9f2ff9b16561a800a4d6875c2cff",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/ef/ef94ac2356af4938fc96c35af41cc9e5788b9f2ff9b16561a800a4d6875c2cff"
     }
   },
   "revisions": {
@@ -84,6 +88,49 @@
         "snaps/frame-01-at-4.6s.png": {
           "before": null,
           "after": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/dd/dd5b5956fbe00a609753f9d3d3ed67b6e597b81011abd3bc0dc2b52417fbb065"
+        }
+      }
+    },
+    "4cfe5ced-2e94-4ff9-8228-0be8ff826bf2": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792950637253,
+      "endedAt": 1792950637291,
+      "files": {
+        "assets/fonts/SF-Pro-Display-Medium.otf": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/8f/8f9c53c801b8e0e45743596aa3281329d04675528faeab7dcbfbaa34cd1577c7"
+        },
+        "assets/fonts/SF-Pro-Display-Regular.otf": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/fa/fa201942bfbbad09b0be750686a747d490901b3bc4618ecdfc30382cf28d4704"
+        },
+        "assets/fonts/SF-Pro-Display-Semibold.otf": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/ef/ef94ac2356af4938fc96c35af41cc9e5788b9f2ff9b16561a800a4d6875c2cff"
+        },
+        "index.html": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/d4/d4aff4193c620f329405726dfd3e177f4e0a706ad44ee38941360a496f02c040",
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/8b/8ba52bd883eb9ccc70ba13b9d7c7575254d072106a672cafeb518e90ba03cf7d"
+        },
+        "README.md": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/2e/2e49a4f9688c7dded939667e50f63c29ce8d05d27146b1ed63a387d3fc845376"
+        },
+        "snaps/contact-sheet.jpg": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/e9/e98fc59ee8bf5b5d00c89c2df5a82c63902fd869149bf7c0fcaff1bcecdfb0b4",
+          "after": null
+        },
+        "snaps/frame-00-at-2.4s.png": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/c3/c34ec4be143e313d0fb677fb11df86e1bd9fe5da7175d10ac1b696a3779e4299",
+          "after": null
+        },
+        "snaps/frame-01-at-4.6s.png": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/7cc5fbd4-83eb-4c01-9fc1-fce42d05cfc1/blobs/dd/dd5b5956fbe00a609753f9d3d3ed67b6e597b81011abd3bc0dc2b52417fbb065",
+          "after": null
         }
       }
     }
@@ -144,13 +191,14 @@
   },
   "renders": {
     "latest": {
-      "id": "612cb20c-ea23-478c-b315-1eee81d03ead",
-      "completedAt": 1792882264692,
-      "output": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-agents/renders/landing-agents-v1-1080p.mp4",
+      "id": "793c9902-fa33-48ae-83cf-6213d95b356c",
+      "completedAt": 1792950649748,
+      "output": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-agents/renders/landing-agents-v2-1080p.mp4",
       "status": "completed",
-      "revision": "d24fa226-d24c-4ad2-9d2d-1c2259cb0040"
+      "revision": "4cfe5ced-2e94-4ff9-8228-0be8ff826bf2"
     },
     "retainedRevisions": [
+      "4cfe5ced-2e94-4ff9-8228-0be8ff826bf2",
       "d24fa226-d24c-4ad2-9d2d-1c2259cb0040"
     ]
   },

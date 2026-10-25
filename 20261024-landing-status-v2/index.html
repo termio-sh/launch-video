@@ -473,7 +473,7 @@
 
       // The whole window, centred. Scale travels as its logarithm.
       const WIDE = { px: 1512, py: 949, s: 0.41 };
-      const cam = { px: WIDE.px, py: WIDE.py, ls: Math.log(WIDE.s), r: -3, sx: FOCUS_SCREEN[0], sy: FOCUS_SCREEN[1], far: 0, mid: 0 };
+      const cam = { px: WIDE.px, py: WIDE.py, ls: Math.log(WIDE.s), r: 0, sx: FOCUS_SCREEN[0], sy: FOCUS_SCREEN[1], far: 0, mid: 0 };
       const state = { ...cam };
       const moves = [];
       const camTo = (to, at, duration, ease = SNAP) => {
@@ -572,7 +572,7 @@
       drift(0, T(2), 1.06);
       // Beat 2: glide in to the ky project's rows in the sidebar. On a
       // landing panel the film plays at a third of its size, so the dots must be large.
-      const FILL = { px: 520, py: 470, s: 1.35, r: -2 };
+      const FILL = { px: 520, py: 470, s: 1.35, r: 0 };
       camTo(FILL, T(2), 1.0);
       drift(T(2) + 1.0, T(12), 1.05);
 
@@ -596,7 +596,7 @@
       // camera returns to the wide frame and the statuses clear, so the last frame
       // meets the first and the agents start the next round.
       drift(T(12), T(12.6), 1.0);
-      camTo({ px: WIDE.px, py: WIDE.py, s: WIDE.s, r: -3 }, T(12.6), FILM - T(12.6) - 0.05);
+      camTo({ px: WIDE.px, py: WIDE.py, s: WIDE.s, r: 0 }, T(12.6), FILM - T(12.6) - 0.05);
       tl.to(".sdot", { scale: 0, duration: 0.25, ease: "power2.in" }, T(12.6));
       tl.to(".sglow", { opacity: 0, duration: 0.25 }, T(12.6));
       ROWS.forEach((k) => tl.set(`.cover-${k}`, { opacity: 1 }, T(12.6) + 0.25));

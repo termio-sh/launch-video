@@ -181,8 +181,8 @@
       gsap.set("#mirror", { xPercent: 100 });
       gsap.set("#keys-top, #keys-kb", { opacity: 0 });
       // The rig is the camera: wide and tilted first, then in to the phone.
-      tl.fromTo("#rig", { scale: 0.8, rotation: -4, y: 40 }, { scale: 0.84, rotation: -4, y: 40, duration: 1.0, ease: "none" }, 0);
-      tl.to("#rig", { scale: 1.06, rotation: -2, y: 0, duration: 1.0, ease: SNAP }, 1.0);
+      tl.fromTo("#rig", { scale: 0.8, rotation: 0, y: 40 }, { scale: 0.84, rotation: 0, y: 40, duration: 1.0, ease: "none" }, 0);
+      tl.to("#rig", { scale: 1.06, rotation: 0, y: 0, duration: 1.0, ease: SNAP }, 1.0);
       tl.to("#rig", { scale: 1.1, duration: 4.2, ease: "none" }, 2.0);
 
       // Tap the "home" project; the session pushes in from the right as UINavigationController does.
@@ -200,7 +200,7 @@
       tl.fromTo("#keys-kb", { opacity: 1, yPercent: 50 }, { opacity: 1, yPercent: 0, duration: 0.35, ease: "power3.out", immediateRender: false }, 4.15);
 
       // Loop: pull back to the wide frame and return to the project list, so the end meets the start.
-      tl.to("#rig", { scale: 0.8, rotation: -4, y: 40, duration: 0.75, ease: SNAP }, FILM - 0.8);
+      tl.to("#rig", { scale: 0.8, rotation: 0, y: 40, duration: 0.75, ease: SNAP }, FILM - 0.8);
       tl.to("#keys-top, #keys-kb, #mirror", { opacity: 0, duration: 0.3, ease: "power1.in" }, FILM - 0.6);
       tl.set("#projects", { xPercent: 0 }, FILM - 0.6);
 

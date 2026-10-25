@@ -1,12 +1,12 @@
 {
   "version": 1,
   "historyId": "b6907f20-ef56-4029-8507-03a573c7727f",
-  "currentRevision": "fa54b136-9f48-46fc-bf07-8dc73948e7c0",
+  "currentRevision": "825b28c3-5f6e-4e64-aaff-bdfea54e5245",
   "pendingChanges": false,
   "files": {
     "README.md": {
-      "hash": "6bc6a9991d1fd5aa0fa5d3afb57e590fa71eaa02027257dc6108856faf405de8",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/6b/6bc6a9991d1fd5aa0fa5d3afb57e590fa71eaa02027257dc6108856faf405de8"
+      "hash": "6ed805e11b83aef299fd1b0c76dee18b31a0360e5c4626109f4fae27bb555f02",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/6e/6ed805e11b83aef299fd1b0c76dee18b31a0360e5c4626109f4fae27bb555f02"
     },
     "assets/img/corner-patch.png": {
       "hash": "a443f13e01dec029315f8dcad611f8b89fcc072960143a52b60efa2d906b3a6f",
@@ -29,16 +29,16 @@
       "content": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/ad/ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17"
     },
     "index.html": {
-      "hash": "9fa99eee16679abc63d611b55bb6744f885a8b7aecc4e8fc0bfb12e1b52be78f",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/9f/9fa99eee16679abc63d611b55bb6744f885a8b7aecc4e8fc0bfb12e1b52be78f"
+      "hash": "c0b4ba0084aecf7a2ca5f9a9b21dbbcfb00a91d189df3b3652b6a465b38244a1",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/c0/c0b4ba0084aecf7a2ca5f9a9b21dbbcfb00a91d189df3b3652b6a465b38244a1"
     },
     "package.json": {
       "hash": "e3750264b066a0634748815ad0aa42dd0cd8f42ec9d17facff0538a3a6d259b8",
       "content": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/e3/e3750264b066a0634748815ad0aa42dd0cd8f42ec9d17facff0538a3a6d259b8"
     },
     "prep.py": {
-      "hash": "e67ffa9eff71edd84e7e10c3305d9de505c00496f7a16f8a60033fa234ebbe4b",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/e6/e67ffa9eff71edd84e7e10c3305d9de505c00496f7a16f8a60033fa234ebbe4b"
+      "hash": "68067c212d53299d3e33d55dfc76df8bafb051ce28f13d25d6c210d5a5b4beed",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/68/68067c212d53299d3e33d55dfc76df8bafb051ce28f13d25d6c210d5a5b4beed"
     },
     "assets/cap/window.png": {
       "hash": "38f98a60a5dc0b59f8770f8544bf24a8a5716ded05c2f01480cc5e5f317d409f",
@@ -92,6 +92,10 @@
       "hash": "c2e55f2e1d6d9ee8ff1860ea86794151280bac93bfdee12d17886e9569e5c250",
       "content": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/c2/c2e55f2e1d6d9ee8ff1860ea86794151280bac93bfdee12d17886e9569e5c250"
     },
+    "snaps2/contact-sheet.jpg": {
+      "hash": "0d6b39790cd35ed08aec6c7b6e046ba10c529729e9036fdce69eaf1c1689e719",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/0d/0d6b39790cd35ed08aec6c7b6e046ba10c529729e9036fdce69eaf1c1689e719"
+    },
     "snaps2/frame-00-at-2s.png": {
       "hash": "ef3d6ca648c10259d05156c22a87fe9ea5d425743c1d205614c1919a4d6d0a6f",
       "content": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/ef/ef3d6ca648c10259d05156c22a87fe9ea5d425743c1d205614c1919a4d6d0a6f"
@@ -108,9 +112,9 @@
       "hash": "c2e55f2e1d6d9ee8ff1860ea86794151280bac93bfdee12d17886e9569e5c250",
       "content": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/c2/c2e55f2e1d6d9ee8ff1860ea86794151280bac93bfdee12d17886e9569e5c250"
     },
-    "snaps2/contact-sheet.jpg": {
-      "hash": "0d6b39790cd35ed08aec6c7b6e046ba10c529729e9036fdce69eaf1c1689e719",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/0d/0d6b39790cd35ed08aec6c7b6e046ba10c529729e9036fdce69eaf1c1689e719"
+    "assets/cap/capture-raw.png": {
+      "hash": "ae0afcf7f1da9c146da0eccaabaafa8e2638fa14b1ef79887d41f2b6688de775",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/ae/ae0afcf7f1da9c146da0eccaabaafa8e2638fa14b1ef79887d41f2b6688de775"
     }
   },
   "revisions": {
@@ -197,6 +201,33 @@
         "snaps2/frame-03-at-6.79s.png": {
           "before": null,
           "after": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/c2/c2e55f2e1d6d9ee8ff1860ea86794151280bac93bfdee12d17886e9569e5c250"
+        }
+      }
+    },
+    "825b28c3-5f6e-4e64-aaff-bdfea54e5245": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792950585526,
+      "endedAt": 1792950585539,
+      "files": {
+        "assets/cap/capture-raw.png": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/ae/ae0afcf7f1da9c146da0eccaabaafa8e2638fa14b1ef79887d41f2b6688de775"
+        },
+        "index.html": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/9f/9fa99eee16679abc63d611b55bb6744f885a8b7aecc4e8fc0bfb12e1b52be78f",
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/c0/c0b4ba0084aecf7a2ca5f9a9b21dbbcfb00a91d189df3b3652b6a465b38244a1"
+        },
+        "prep.py": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/e6/e67ffa9eff71edd84e7e10c3305d9de505c00496f7a16f8a60033fa234ebbe4b",
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/68/68067c212d53299d3e33d55dfc76df8bafb051ce28f13d25d6c210d5a5b4beed"
+        },
+        "README.md": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/6b/6bc6a9991d1fd5aa0fa5d3afb57e590fa71eaa02027257dc6108856faf405de8",
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b6907f20-ef56-4029-8507-03a573c7727f/blobs/6e/6ed805e11b83aef299fd1b0c76dee18b31a0360e5c4626109f4fae27bb555f02"
         }
       }
     }
@@ -457,15 +488,15 @@
   },
   "renders": {
     "latest": {
-      "id": "57c9f4c9-d3d9-47ea-a731-fcac9fd63f55",
-      "completedAt": 1792899630384,
-      "output": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-status-v2/renders/landing-status-v2-1080p.mp4",
+      "id": "cff171e7-1a02-42be-afcd-8f325b022e1f",
+      "completedAt": 1792950605864,
+      "output": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-status-v2/renders/landing-status-v3-1080p.mp4",
       "status": "completed",
-      "revision": "fa54b136-9f48-46fc-bf07-8dc73948e7c0"
+      "revision": "825b28c3-5f6e-4e64-aaff-bdfea54e5245"
     },
     "retainedRevisions": [
-      "fa54b136-9f48-46fc-bf07-8dc73948e7c0",
-      "4259ba12-607a-4228-aaee-210ad159047c"
+      "825b28c3-5f6e-4e64-aaff-bdfea54e5245",
+      "fa54b136-9f48-46fc-bf07-8dc73948e7c0"
     ]
   },
   "pendingArtifactCleanup": []

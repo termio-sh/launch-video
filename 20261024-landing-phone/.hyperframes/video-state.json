@@ -1,7 +1,7 @@
 {
   "version": 1,
   "historyId": "b18cba21-6170-4662-b80c-b6ab9b5bb531",
-  "currentRevision": "e2a060d8-aae2-441f-aca2-f1a5f9fdc6a1",
+  "currentRevision": "8121b476-643a-4f84-81ec-13eca2ae6f6c",
   "pendingChanges": false,
   "files": {
     "assets/cap/phone-keys.webp": {
@@ -21,48 +21,16 @@
       "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/ad/ad5dadeef78a520800a9e5cdd27a92ff5ac37f11b6a07f611b6b52b9f8c79a17"
     },
     "index.html": {
-      "hash": "e7b1ffe82e3e1f249ff9c90c14d0e68e3b5c1f0cb6ce441d325b0cb94a829c29",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/e7/e7b1ffe82e3e1f249ff9c90c14d0e68e3b5c1f0cb6ce441d325b0cb94a829c29"
+      "hash": "2d005b594a3cfa2e7903f9b50c784cd102e209005a688aed2a85c3ad5c14408e",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/2d/2d005b594a3cfa2e7903f9b50c784cd102e209005a688aed2a85c3ad5c14408e"
     },
     "package.json": {
       "hash": "f38d808a73cb93c6d86df175a63fe45b0e147fd4f2de5d022aec9461d81441b8",
       "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/f3/f38d808a73cb93c6d86df175a63fe45b0e147fd4f2de5d022aec9461d81441b8"
     },
-    "snaps/frame-00-at-0s.png": {
-      "hash": "4dc8a468bc27efdb004557970d4d45bc2d1304c2f024485a024f418fc8f0dd56",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/4d/4dc8a468bc27efdb004557970d4d45bc2d1304c2f024485a024f418fc8f0dd56"
-    },
-    "snaps/frame-01-at-2s.png": {
-      "hash": "589b2ebc19ed74dc8383fc6fee4c76173504302700ee0da5a2f8936636bae739",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/58/589b2ebc19ed74dc8383fc6fee4c76173504302700ee0da5a2f8936636bae739"
-    },
-    "snaps/frame-02-at-2.35s.png": {
-      "hash": "d352ce96001e7c750a88a67b54f6235ce80b224a90181c21925e76accdbbb905",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/d3/d352ce96001e7c750a88a67b54f6235ce80b224a90181c21925e76accdbbb905"
-    },
-    "snaps/frame-03-at-2.7s.png": {
-      "hash": "a6abaa5f0d3e0c6ee8e6ced5d9be46f537efbe953d7a3929544fc29d88aa45f6",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/a6/a6abaa5f0d3e0c6ee8e6ced5d9be46f537efbe953d7a3929544fc29d88aa45f6"
-    },
-    "snaps/frame-04-at-4.1s.png": {
-      "hash": "d0be1e764f8070d2077a762943811fcd4577c97b91e9b90dbadb9f974bb2a054",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/d0/d0be1e764f8070d2077a762943811fcd4577c97b91e9b90dbadb9f974bb2a054"
-    },
-    "snaps/frame-05-at-5s.png": {
-      "hash": "ddea67ea8581b08ab1520f95951884a6c45a5ed39d9b2be0de7c8d23ba883ea0",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/dd/ddea67ea8581b08ab1520f95951884a6c45a5ed39d9b2be0de7c8d23ba883ea0"
-    },
-    "snaps/frame-06-at-6.5s.png": {
-      "hash": "ca8f1ae884f7aecbb1fa038b65107e32a07627c4eb5966e7fa1d33919afbec51",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/ca/ca8f1ae884f7aecbb1fa038b65107e32a07627c4eb5966e7fa1d33919afbec51"
-    },
-    "snaps/frame-07-at-6.79s.png": {
-      "hash": "40e96fdcc1f081b873763864894fab37bca2b2b84db0415c4254c7d1b7bea388",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/40/40e96fdcc1f081b873763864894fab37bca2b2b84db0415c4254c7d1b7bea388"
-    },
-    "snaps/contact-sheet.jpg": {
-      "hash": "0af6bc1113443d1ba6afbb23e4ef7dee75389559c1207f9cc607d91044d46355",
-      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/0a/0af6bc1113443d1ba6afbb23e4ef7dee75389559c1207f9cc607d91044d46355"
+    "README.md": {
+      "hash": "209581587f58a02c13ebc5ef7e40f0388895d803a603d4ffe78058d5ca0a7ccb",
+      "content": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/20/209581587f58a02c13ebc5ef7e40f0388895d803a603d4ffe78058d5ca0a7ccb"
     }
   },
   "revisions": {
@@ -110,6 +78,61 @@
         "snaps/frame-07-at-6.79s.png": {
           "before": null,
           "after": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/40/40e96fdcc1f081b873763864894fab37bca2b2b84db0415c4254c7d1b7bea388"
+        }
+      }
+    },
+    "8121b476-643a-4f84-81ec-13eca2ae6f6c": {
+      "actor": {
+        "kind": "outside",
+        "name": "Outside"
+      },
+      "label": "Changed outside the app",
+      "startedAt": 1792950651997,
+      "endedAt": 1792950652003,
+      "files": {
+        "index.html": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/e7/e7b1ffe82e3e1f249ff9c90c14d0e68e3b5c1f0cb6ce441d325b0cb94a829c29",
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/2d/2d005b594a3cfa2e7903f9b50c784cd102e209005a688aed2a85c3ad5c14408e"
+        },
+        "README.md": {
+          "before": null,
+          "after": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/20/209581587f58a02c13ebc5ef7e40f0388895d803a603d4ffe78058d5ca0a7ccb"
+        },
+        "snaps/contact-sheet.jpg": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/0a/0af6bc1113443d1ba6afbb23e4ef7dee75389559c1207f9cc607d91044d46355",
+          "after": null
+        },
+        "snaps/frame-00-at-0s.png": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/4d/4dc8a468bc27efdb004557970d4d45bc2d1304c2f024485a024f418fc8f0dd56",
+          "after": null
+        },
+        "snaps/frame-01-at-2s.png": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/58/589b2ebc19ed74dc8383fc6fee4c76173504302700ee0da5a2f8936636bae739",
+          "after": null
+        },
+        "snaps/frame-02-at-2.35s.png": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/d3/d352ce96001e7c750a88a67b54f6235ce80b224a90181c21925e76accdbbb905",
+          "after": null
+        },
+        "snaps/frame-03-at-2.7s.png": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/a6/a6abaa5f0d3e0c6ee8e6ced5d9be46f537efbe953d7a3929544fc29d88aa45f6",
+          "after": null
+        },
+        "snaps/frame-04-at-4.1s.png": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/d0/d0be1e764f8070d2077a762943811fcd4577c97b91e9b90dbadb9f974bb2a054",
+          "after": null
+        },
+        "snaps/frame-05-at-5s.png": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/dd/ddea67ea8581b08ab1520f95951884a6c45a5ed39d9b2be0de7c8d23ba883ea0",
+          "after": null
+        },
+        "snaps/frame-06-at-6.5s.png": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/ca/ca8f1ae884f7aecbb1fa038b65107e32a07627c4eb5966e7fa1d33919afbec51",
+          "after": null
+        },
+        "snaps/frame-07-at-6.79s.png": {
+          "before": "/Users/yuanjiwei/.cache/hyperframes/history/b18cba21-6170-4662-b80c-b6ab9b5bb531/blobs/40/40e96fdcc1f081b873763864894fab37bca2b2b84db0415c4254c7d1b7bea388",
+          "after": null
         }
       }
     }
@@ -290,13 +313,14 @@
   },
   "renders": {
     "latest": {
-      "id": "8630447f-78b4-4699-9630-bca5ed5ca5c9",
-      "completedAt": 1792882374252,
-      "output": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-phone/renders/landing-phone-v1-1080p.mp4",
+      "id": "b09b9b4b-a25a-4178-b1b6-fedb01080163",
+      "completedAt": 1792950670432,
+      "output": "/Users/yuanjiwei/Documents/GitHub/launch-video/20261024-landing-phone/renders/landing-phone-v2-1080p.mp4",
       "status": "completed",
-      "revision": "e2a060d8-aae2-441f-aca2-f1a5f9fdc6a1"
+      "revision": "8121b476-643a-4f84-81ec-13eca2ae6f6c"
     },
     "retainedRevisions": [
+      "8121b476-643a-4f84-81ec-13eca2ae6f6c",
       "e2a060d8-aae2-441f-aca2-f1a5f9fdc6a1"
     ]
   },

@@ -12,8 +12,10 @@ Built with [HyperFrames](https://github.com/heygen-com/hyperframes) 0.8.169.
 
 | File | Size | Use |
 |---|---|---|
-| `renders/landing-status-v2-1080p.mp4` | 1920×1080, 60 fps | Master |
-| `renders/landing-status-v2-720p-web.mp4` | 1280×720, no audio | termio.sh |
+| `renders/landing-status-v3-1080p.mp4` | 1920×1080, 60 fps | Master, level camera |
+| `renders/landing-status-v3-720p-web.mp4` | 1280×720, no audio | termio.sh since 2026-10-25 |
+| `renders/landing-status-v2-1080p.mp4` | 1920×1080, 60 fps | Earlier master, tilted 2–4° |
+| `renders/landing-status-v2-720p-web.mp4` | 1280×720, no audio | termio.sh until 2026-10-25 |
 
 ## Source
 
@@ -32,9 +34,9 @@ Built with [HyperFrames](https://github.com/heygen-com/hyperframes) 0.8.169.
 ## Render
 
 ```sh
-npx hyperframes@0.8.169 render . -o renders/landing-status-v2-1080p.mp4 --fps 60 --quality delivery
-ffmpeg -i renders/landing-status-v2-1080p.mp4 -an -vf scale=1280:720 -c:v libx264 -preset slow \
-  -crf 23 -pix_fmt yuv420p -movflags +faststart renders/landing-status-v2-720p-web.mp4
+npx hyperframes@0.8.169 render . -o renders/landing-status-v3-1080p.mp4 --fps 60 --quality delivery
+ffmpeg -i renders/landing-status-v3-1080p.mp4 -an -vf scale=1280:720 -c:v libx264 -preset slow \
+  -crf 23 -pix_fmt yuv420p -movflags +faststart renders/landing-status-v3-720p-web.mp4
 ```
 
 The 720p copy is the one termio.sh serves, as `web/landing/public/videos/session-status.mp4`.

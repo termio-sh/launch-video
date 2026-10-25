@@ -510,7 +510,7 @@
 
       // The whole window, centred. Scale travels as its logarithm.
       const WIDE = { px: 982, py: 807, s: 0.56 };
-      const cam = { px: WIDE.px, py: WIDE.py, ls: Math.log(WIDE.s), r: -3, sx: FOCUS_SCREEN[0], sy: FOCUS_SCREEN[1], far: 0, mid: 0 };
+      const cam = { px: WIDE.px, py: WIDE.py, ls: Math.log(WIDE.s), r: 0, sx: FOCUS_SCREEN[0], sy: FOCUS_SCREEN[1], far: 0, mid: 0 };
       const state = { ...cam };
       const moves = [];
       const camTo = (to, at, duration, ease = SNAP) => {
@@ -609,7 +609,7 @@
       drift(0, T(2), 1.06);
       // Beat 2: glide in to the agent list, names on the left and switches on the right.
       // On a landing panel the film plays at a third of its size, so the rows must be large.
-      const FILL = { px: 1180, py: 1060, s: 1.22, r: -2 };
+      const FILL = { px: 1180, py: 1060, s: 1.22, r: 0 };
       camTo(FILL, T(2), 1.0);
       drift(T(2) + 1.0, T(12), 1.05);
 
@@ -626,7 +626,7 @@
       // camera returns to the wide frame and the statuses clear, so the last frame
       // meets the first and the agents start the next round.
       drift(T(12), T(12.6), 1.0);
-      camTo({ px: WIDE.px, py: WIDE.py, s: WIDE.s, r: -3 }, T(12.6), FILM - T(12.6) - 0.05);
+      camTo({ px: WIDE.px, py: WIDE.py, s: WIDE.s, r: 0 }, T(12.6), FILM - T(12.6) - 0.05);
       tl.set(".sw .knob", { x: 0, backgroundColor: "rgb(226, 226, 228)" }, T(12.6) + 0.25);
       tl.set(".sw .on", { opacity: 0 }, T(12.6) + 0.25);
 

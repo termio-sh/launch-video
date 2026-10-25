@@ -11,6 +11,7 @@ Each folder is one video: its source composition, assets and final renders.
 | [`20261024-landing-survive`](20261024-landing-survive) | Landing loop: sessions survive quit |
 | [`20261024-landing-agents`](20261024-landing-agents) | Landing loop: every agent, one switch |
 | [`20261024-landing-phone`](20261024-landing-phone) | Landing loop: your sessions, on your phone |
+| [`20261025-ios-simulator`](20261025-ios-simulator) | The Simulator pane: an agent drives the iOS Simulator with `termio sim`, the person types into it (film and landing loop) |
 
 ## Skills
 

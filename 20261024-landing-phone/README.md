@@ -11,8 +11,10 @@ Built with [HyperFrames](https://github.com/heygen-com/hyperframes) 0.8.169.
 
 | File | Size | Use |
 |---|---|---|
-| `renders/landing-phone-v1-1080p.mp4` | 1920×1080, 60 fps | Master |
-| `renders/landing-phone-v1-720p-web.mp4` | 1280×720, no audio | termio.sh |
+| `renders/landing-phone-v2-1080p.mp4` | 1920×1080, 60 fps | Master, level camera |
+| `renders/landing-phone-v2-720p-web.mp4` | 1280×720, no audio | termio.sh since 2026-10-25 |
+| `renders/landing-phone-v1-1080p.mp4` | 1920×1080, 60 fps | Earlier master, tilted 2–4° |
+| `renders/landing-phone-v1-720p-web.mp4` | 1280×720, no audio | termio.sh until 2026-10-25 |
 
 ## Source
 
@@ -32,9 +34,9 @@ None. The film draws no text.
 ## Render
 
 ```sh
-npx hyperframes@0.8.169 render . -o renders/landing-phone-v1-1080p.mp4 --fps 60 --quality delivery
-ffmpeg -i renders/landing-phone-v1-1080p.mp4 -an -vf scale=1280:720 -c:v libx264 -preset slow \
-  -crf 23 -pix_fmt yuv420p -movflags +faststart renders/landing-phone-v1-720p-web.mp4
+npx hyperframes@0.8.169 render . -o renders/landing-phone-v2-1080p.mp4 --fps 60 --quality delivery
+ffmpeg -i renders/landing-phone-v2-1080p.mp4 -an -vf scale=1280:720 -c:v libx264 -preset slow \
+  -crf 23 -pix_fmt yuv420p -movflags +faststart renders/landing-phone-v2-720p-web.mp4
 ```
 
 The 720p copy is the one termio.sh serves, as `web/landing/public/videos/phone.mp4`.

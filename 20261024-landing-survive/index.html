@@ -325,7 +325,7 @@
 
       // The whole window, centred. Scale travels as its logarithm.
       const WIDE = { px: 1291, py: 949, s: 0.47 };
-      const cam = { px: WIDE.px, py: WIDE.py, ls: Math.log(WIDE.s), r: -3, sx: FOCUS_SCREEN[0], sy: FOCUS_SCREEN[1], far: 0, mid: 0 };
+      const cam = { px: WIDE.px, py: WIDE.py, ls: Math.log(WIDE.s), r: 0, sx: FOCUS_SCREEN[0], sy: FOCUS_SCREEN[1], far: 0, mid: 0 };
       const state = { ...cam };
       const moves = [];
       const camTo = (to, at, duration, ease = SNAP) => {
@@ -397,7 +397,7 @@
 
       // 0-0.8 s: the whole window. Then glide in to the agent reading the tests.
       drift(0, 0.8, 1.05);
-      const FOCUS = { px: 2124, py: 236, s: 1.5, r: -2 };
+      const FOCUS = { px: 2124, py: 236, s: 1.5, r: 0 };
       camTo(FOCUS, 0.8, 1.1);
       drift(1.9, 6.0, 1.04);
 
@@ -417,7 +417,7 @@
       tl.to(".pane-ring", { opacity: 0, duration: 0.8, ease: "power1.in" }, 5.3);
 
       // A landing loop: back to the wide frame, where the first capture takes over again.
-      camTo({ px: WIDE.px, py: WIDE.py, s: WIDE.s, r: -3 }, 6.0, FILM - 6.0 - 0.05);
+      camTo({ px: WIDE.px, py: WIDE.py, s: WIDE.s, r: 0 }, 6.0, FILM - 6.0 - 0.05);
       tl.to(".shot-before", { opacity: 1, duration: 0.4, ease: "sine.inOut" }, 7.0);
 
       // The aurora flows for the whole film; each layer swings on its own period.
