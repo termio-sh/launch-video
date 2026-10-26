@@ -331,7 +331,7 @@
     </style>
   </head>
   <body>
-    <div id="root" data-composition-id="main" data-start="0" data-duration="12.75" data-width="1920" data-height="1080">
+    <div id="root" data-composition-id="main" data-start="0" data-duration="7.4" data-width="1920" data-height="1080">
       <div id="backdrop">
         <div class="aurora" id="au-navy"></div>
         <div class="aurora" id="au-teal"></div>
@@ -345,7 +345,7 @@
       <svg width="0" height="0" style="position: absolute">
         <filter id="mb" x="-5%" y="0" width="110%" height="100%" color-interpolation-filters="sRGB"><feGaussianBlur id="mb-k" stdDeviation="0 0" /></filter>
       </svg>
-      <section id="shot-window" class="scene clip" data-start="0" data-duration="12.75" data-track-index="0">
+      <section id="shot-window" class="scene clip" data-start="0" data-duration="7.4" data-track-index="0">
         <div class="lens" id="lens-far"><div class="tilt"><div class="untilt"><div class="cam"></div></div></div></div>
         <div class="lens" id="lens-mid"><div class="tilt"><div class="untilt"><div class="cam"></div></div></div></div>
         <div class="lens" id="lens-sharp"><div class="tilt"><div class="untilt"><div class="cam"></div></div></div></div>
@@ -355,7 +355,7 @@
     </div>
 
     <script>
-      const FILM = 12.75;
+      const FILM = 7.4;
       const TERM = ["A1", "A2", "A3", "A4", "A6", "A7"];
       const PHONE = ["p0-home", "p1-projects", "p2-devices", "p3-alert", ...Array.from({ length: 22 }, (_, i) => `t${String(i + 1).padStart(2, "0")}`)];
       const TYPED = "ws://studio.local:8787";
@@ -554,58 +554,51 @@
       // above about 28 px a frame. The camera stays level and travels one axis: in, then out.
       const GLIDE = bezier(0.4, 0, 0.1, 1);
 
-      // 0-0.8 s: the whole window.
-      drift(0, 0.8, 1.02);
+      // 7.4 s for termio.sh: the agent launches and taps, the person types, and the
+      // first state returns. The loop opens and closes on the agent beside the device.
       const WORK = { px: 1830, py: 1060, s: 0.7, r: 0 };
-      camTo(WORK, 0.8, 1.1, GLIDE);
+      Object.assign(cam, { px: WORK.px, py: WORK.py, ls: Math.log(WORK.s) });
+      Object.assign(state, { px: WORK.px, py: WORK.py, ls: Math.log(WORK.s) });
+      drift(0, 0.6, 1.01);
 
-      // 2.2 s: the agent launches the app; the device opens it.
-      term("A1", 2.2);
-      working(2.2);
-      term("A2", 2.9);
-      done(2.9);
-      tl.fromTo(".ph-p1-projects", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out", immediateRender: false }, 2.9);
-      tl.set(".ph-p0-home", { opacity: 0 }, 3.25);
+      term("A1", 0.6);
+      working(0.6);
+      term("A2", 1.2);
+      done(1.2);
+      tl.fromTo(".ph-p1-projects", { opacity: 0, scale: 0.9 }, { opacity: 1, scale: 1, duration: 0.35, ease: "expo.out", immediateRender: false }, 1.2);
+      tl.set(".ph-p0-home", { opacity: 0 }, 1.55);
 
-      // 3.6 s: two taps by label. The Devices sheet slides up, then the address alert.
-      term("A3", 3.6);
-      working(3.6);
-      tl.fromTo(".ph-p2-devices", { opacity: 1, yPercent: 100 }, { yPercent: 0, duration: 0.4, ease: "expo.out", immediateRender: false }, 4.0);
-      tl.set(".ph-p1-projects", { opacity: 0 }, 4.4);
-      tl.fromTo(".ph-p3-alert", { opacity: 0 }, { opacity: 1, duration: 0.18, ease: "power1.out", immediateRender: false }, 4.4);
-      tl.set(".ph-p2-devices", { opacity: 0 }, 4.6);
-      term("A4", 4.6);
-      done(4.6);
+      term("A3", 1.8);
+      working(1.8);
+      tl.fromTo(".ph-p2-devices", { opacity: 1, yPercent: 100 }, { yPercent: 0, duration: 0.4, ease: "expo.out", immediateRender: false }, 2.15);
+      tl.set(".ph-p1-projects", { opacity: 0 }, 2.55);
+      tl.fromTo(".ph-p3-alert", { opacity: 0 }, { opacity: 1, duration: 0.18, ease: "power1.out", immediateRender: false }, 2.55);
+      tl.set(".ph-p2-devices", { opacity: 0 }, 2.75);
+      term("A4", 2.75);
+      done(2.75);
 
-      // 5.0 s: the person takes over. The pointer heads for the field first; the camera
-      // follows a beat behind and settles before the click.
-      handTo({ o: 1 }, 5.0, 0.15, "power1.out");
-      handTo({ x: 2470, y: 1062 }, 5.0, 0.9);
+      // The person takes over: the pointer leads, the camera follows and settles first.
+      handTo({ o: 1 }, 3.0, 0.15, "power1.out");
+      handTo({ x: 2470, y: 1062 }, 3.0, 0.9);
       const FIELD = { px: 2379, py: 1052, s: 1.4, r: 0, far: 3, mid: 1.2 };
-      camTo(FIELD, 5.2, 1.2, GLIDE);
-      tl.to("#shot-window", { "--h1": "760px", duration: 1.2, ease: GLIDE }, 5.2);
-      handTo({ k: 0.86 }, 6.6, 0.07, "power2.out");
-      handTo({ k: 1 }, 6.67, 0.12, "power2.out");
-      const KEY = 0.05;
-      [...TYPED].forEach((_, i) => phone(`t${String(i + 1).padStart(2, "0")}`, 6.75 + i * KEY));
-      handTo({ x: 2560, y: 1220, o: 0 }, 7.85, 0.35, "power2.inOut");
+      camTo(FIELD, 3.2, 1.2, GLIDE);
+      tl.to("#shot-window", { "--h1": "760px", duration: 1.2, ease: GLIDE }, 3.2);
+      handTo({ k: 0.86 }, 4.5, 0.07, "power2.out");
+      handTo({ k: 1 }, 4.57, 0.12, "power2.out");
+      const KEY = 0.045;
+      [...TYPED].forEach((_, i) => phone(`t${String(i + 1).padStart(2, "0")}`, 4.65 + i * KEY));
+      handTo({ x: 2560, y: 1220, o: 0 }, 5.75, 0.3, "power2.inOut");
 
-      // 8.1 s: back out along the same axis to the agent beside the device.
-      camTo({ ...WORK, far: 0, mid: 0 }, 8.1, 1.25, GLIDE);
-      tl.to("#shot-window", { "--h1": "1400px", duration: 1.25, ease: GLIDE }, 8.1);
-      term("A6", 9.4);
-      working(9.4);
-      term("A7", 10.1);
-      done(10.1);
-      drift(9.35, 11.4, 1.015);
-
-      // A landing loop: back to the whole window while the first state returns.
-      camTo({ ...WIDE, r: 0 }, 11.4, 1.3, GLIDE);
-      tl.to(".term", { opacity: 0, duration: 0.5, ease: "sine.inOut" }, 12.0);
-      tl.to(".row-done", { opacity: 0, duration: 0.5, ease: "sine.inOut" }, 12.0);
-      tl.to(".row-idle", { opacity: 1, duration: 0.5, ease: "sine.inOut" }, 12.0);
-      tl.fromTo(".ph-p0-home", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "sine.inOut", immediateRender: false }, 12.0);
-      tl.set(".ph:not(.ph-p0-home)", { opacity: 0 }, 12.5);
+      // Back out to the agent while the first state returns.
+      camTo({ ...WORK, far: 0, mid: 0 }, 5.95, 1.25, GLIDE);
+      tl.to("#shot-window", { "--h1": "1400px", duration: 1.25, ease: GLIDE }, 5.95);
+      tl.to(".term", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 6.75);
+      tl.to(".row-done", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 6.75);
+      tl.to(".row-idle", { opacity: 1, duration: 0.4, ease: "sine.inOut" }, 6.75);
+      // The home screen sits lowest in the stack, so it goes in under the typed frame,
+      // and the typed frame fades off it.
+      tl.set(".ph-p0-home", { opacity: 1 }, 6.75);
+      tl.to(".ph-t22", { opacity: 0, duration: 0.4, ease: "sine.inOut" }, 6.75);
 
       // The aurora flows for the whole film; each layer swings on its own period.
       const flow = (sel, to, period) =>

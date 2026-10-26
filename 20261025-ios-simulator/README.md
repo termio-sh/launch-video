@@ -1,6 +1,6 @@
 # Termio — the Simulator pane (2026-10-25)
 
-A 13.8-second launch film for the Simulator pane, shipped in v0.63.0, and a 12.75-second
+A 13.8-second launch film for the Simulator pane, shipped in v0.63.0, and a 7.4-second
 silent loop cut from it for termio.sh.
 
 Claude Code launches TermioMobile on iPhone 17 with `termio sim launch`, then taps
@@ -18,14 +18,16 @@ Built with [HyperFrames](https://github.com/heygen-com/hyperframes) 0.8.169.
 |---|---|---|
 | `renders/ios-simulator-v3-4k.mp4` | 3840×2160, 60 fps, 13.8 s, music | Launch film, with the end card |
 | `renders/ios-simulator-v3-1080p.mp4` | 1920×1080, under 10 MB | Upload copy |
-| `site/renders/ios-simulator-site-v1-1080p.mp4` | 1920×1080, 60 fps, 12.75 s | Site loop master |
-| `site/renders/ios-simulator-site-v1-720p-web.mp4` | 1280×720, no audio | termio.sh (`ios-simulator.mp4`) |
-| `site/renders/ios-simulator-site-v1-poster.jpg` | 1280×720 | termio.sh poster, the frame at 10.6 s |
+| `site/renders/ios-simulator-site-v2-1080p.mp4` | 1920×1080, 60 fps, 7.4 s | Site loop master |
+| `site/renders/ios-simulator-site-v2-720p-web.mp4` | 1280×720, no audio | termio.sh (`ios-simulator.mp4`) |
+| `site/renders/ios-simulator-site-v2-poster.jpg` | 1280×720 | termio.sh poster, the frame at 2.9 s |
+| `site/renders/ios-simulator-site-v1-*` | 1920×1080 and 1280×720, 12.75 s | The first site loop, replaced by v2 |
 
 ## Source
 
 - `index.html` is the launch film. `site/index.html` is the same composition without the
-  end card and audio. It returns to the wide shot and the first state, so it loops.
+  end card, audio and wide shot. It opens and closes on the agent beside the device, and
+  the first state returns at the end, so it loops.
   `site/assets` is a symlink to `../assets`.
 - The window, terminal and sidebar row are real captures taken by the Codex CLI's Computer
   Use from the release app (`BRIEF-codex-v2.md`, `BRIEF-codex-v3.md`; v1 captured nothing):
@@ -66,7 +68,9 @@ npx hyperframes@0.8.169 render . --resolution 4k --fps 60 --quality delivery -o 
 ffmpeg -i renders/ios-simulator-v3-4k.mp4 -vf scale=1920:1080 -c:v libx264 -crf 20 -maxrate 5M \
   -bufsize 10M -c:a aac -b:a 128k -movflags +faststart renders/ios-simulator-v3-1080p.mp4
 cd site
-npx hyperframes@0.8.169 render . -o renders/ios-simulator-site-v1-1080p.mp4 --fps 60 --quality delivery
-ffmpeg -i renders/ios-simulator-site-v1-1080p.mp4 -an -vf scale=1280:720 -c:v libx264 -preset slow \
-  -crf 23 -pix_fmt yuv420p -movflags +faststart renders/ios-simulator-site-v1-720p-web.mp4
+npx hyperframes@0.8.169 render . -o renders/ios-simulator-site-v2-1080p.mp4 --fps 60 --quality delivery
+ffmpeg -i renders/ios-simulator-site-v2-1080p.mp4 -an -vf scale=1280:720 -c:v libx264 -preset slow \
+  -crf 23 -pix_fmt yuv420p -movflags +faststart renders/ios-simulator-site-v2-720p-web.mp4
+ffmpeg -ss 2.9 -i renders/ios-simulator-site-v2-720p-web.mp4 -frames:v 1 -q:v 3 \
+  renders/ios-simulator-site-v2-poster.jpg
 ```
